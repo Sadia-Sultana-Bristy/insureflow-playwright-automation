@@ -43,7 +43,7 @@ jobs:
         run: npm ci
 
       - name: Install Playwright browser
-        run: npx playwright install --with-deps ${{ matrix.project }}
+        run: npx playwright install --with-deps chromium ${{ matrix.project }}
 
       - name: Run Playwright tests
         run: npx playwright test --project=${{ matrix.project }} ${{ github.event.inputs.tag && format('--grep {0}', github.event.inputs.tag) || '' }}
