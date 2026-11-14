@@ -18,7 +18,7 @@
     "clean": "node -e \"const fs=require('fs');['reports/html-report','reports/junit','test-results','.auth'].forEach(p=>fs.rmSync(p,{recursive:true,force:true}))\""
   },
   "keywords": ["playwright", "test-automation", "qa", "page-object-model", "e2e", "insurance"],
-  "author": "Md Ashikul Islam",
+  "author": "Sadia Sultana Bristy",
   "license": "MIT",
   "engines": {
     "node": ">=20"
