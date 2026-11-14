@@ -294,4 +294,4 @@ test('search by policy number', async ({ policiesPage }) => {
 
 ---
 
-**Author:** Md Ashikul Islam, QA Automation Engineer · [LinkedIn](https://www.linkedin.com/in/<your-linkedin>) · [GitHub](https://github.com/Sadia-Sultana-Bristy)
+**Author:** Sadia Sultana Bristy, QA Engineer · [Portfolio](https://sadia-sultana-bristy.github.io) · [LinkedIn](https://www.linkedin.com/in/sadia-sultana-bristy) · [GitHub](https://github.com/Sadia-Sultana-Bristy)
