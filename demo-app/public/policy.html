@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Policy details | InsureFlow</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app-header"></div>
+  <main class="container">
+    <a href="policies.html" data-testid="back-to-policies">&larr; Back to My Policies</a>
+    <section class="panel" data-testid="policy-details" hidden>
+      <h1>Policy <span data-testid="policy-number"></span></h1>
+      <dl class="details">
+        <dt>Product</dt><dd data-testid="policy-type"></dd>
+        <dt>Coverage tier</dt><dd data-testid="policy-tier"></dd>
+        <dt>Insured item</dt><dd data-testid="policy-insured-item"></dd>
+        <dt>Status</dt><dd data-testid="policy-status"></dd>
+        <dt>Coverage limit</dt><dd data-testid="policy-coverage"></dd>
+        <dt>Annual premium</dt><dd data-testid="policy-premium"></dd>
+        <dt>Start date</dt><dd data-testid="policy-start-date"></dd>
+        <dt>Renewal date</dt><dd data-testid="policy-renewal-date"></dd>
+      </dl>
+      <div class="actions">
+        <a class="btn btn-primary" data-testid="file-claim-button" hidden>File a claim</a>
+      </div>
+    </section>
+    <section class="panel empty-state" data-testid="policy-not-found" hidden>
+      <h1>Policy not found</h1>
+      <p>We couldn't find a policy with that number on your account.</p>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+  <script src="js/pages/policy.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "customer": {
+    "email": "alex.morgan@insureflow.test",
+    "password": "Secure@123",
+    "firstName": "Alex",
+    "lastName": "Morgan",
+    "description": "Existing customer with a mixed policy portfolio and claim history"
+  },
+  "newCustomer": {
+    "email": "priya.shah@insureflow.test",
+    "password": "Secure@123",
+    "firstName": "Priya",
+    "lastName": "Shah",
+    "description": "Newly registered customer with no policies or claims"
+  },
+  "lockedCustomer": {
+    "email": "locked.user@insureflow.test",
+    "password": "Secure@123",
+    "description": "Account locked by the security team"
+  },
+  "invalidCredentials": {
+    "email": "alex.morgan@insureflow.test",
+    "password": "WrongPassword!1"
+  }
+}

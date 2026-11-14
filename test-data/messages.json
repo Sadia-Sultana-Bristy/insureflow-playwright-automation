@@ -1,0 +1,39 @@
+{
+  "login": {
+    "emailRequired": "Email is required",
+    "emailInvalid": "Enter a valid email address",
+    "passwordRequired": "Password is required",
+    "invalidCredentials": "Invalid email or password. Please try again.",
+    "accountLocked": "Your account has been locked. Please contact customer support.",
+    "signInRequired": "Please sign in to continue.",
+    "signedOut": "You have been signed out successfully."
+  },
+  "quote": {
+    "productRequired": "Select a product",
+    "tierRequired": "Select a coverage tier",
+    "insuredItemRequired": "Tell us what you are insuring",
+    "coverageRequired": "Coverage amount is required",
+    "startDateRequired": "Start date is required",
+    "startDateInPast": "Start date cannot be in the past",
+    "startDateTooFar": "Start date must be within the next 90 days",
+    "termsRequired": "You must accept the terms and conditions to continue"
+  },
+  "claims": {
+    "policyRequired": "Select a policy",
+    "typeRequired": "Select an incident type",
+    "dateRequired": "Incident date is required",
+    "dateInFuture": "Incident date cannot be in the future",
+    "amountRequired": "Claim amount is required",
+    "amountZero": "Claim amount must be greater than $0.00",
+    "amountExceedsCoverage": "Claim amount cannot exceed the policy coverage of {coverage}",
+    "descriptionTooShort": "Description must be at least 20 characters",
+    "noActivePolicies": "You need an active policy before you can file a claim."
+  },
+  "policies": {
+    "noResults": "No policies match your search or filters.",
+    "notFound": "Policy not found"
+  },
+  "dashboard": {
+    "noPolicies": "You don't have any policies yet."
+  }
+}

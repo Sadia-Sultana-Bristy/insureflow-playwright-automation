@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claims | InsureFlow</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app-header"></div>
+  <main class="container">
+    <h1>Claims</h1>
+    <p class="subtitle">File a new claim and track existing ones.</p>
+
+    <div class="alert alert-success" data-testid="claim-success" role="status" hidden>
+      Claim <strong data-testid="claim-reference"></strong> has been submitted. Our team will review it within 2 business days.
+    </div>
+
+    <section class="panel">
+      <h2>File a new claim</h2>
+      <p class="empty-state" data-testid="claim-no-policies" hidden>You need an active policy before you can file a claim.</p>
+      <form id="claim-form" data-testid="claim-form" novalidate>
+        <div class="grid-2">
+          <div class="field">
+            <label for="claim-policy">Policy</label>
+            <select id="claim-policy" name="policyNumber" data-testid="claim-policy">
+              <option value="">Select a policy</option>
+            </select>
+            <p class="field-error" data-error-for="policyNumber" data-testid="claim-policy-error" hidden></p>
+          </div>
+          <div class="field">
+            <label for="claim-type">Incident type</label>
+            <select id="claim-type" name="incidentType" data-testid="claim-type">
+              <option value="">Select an incident type</option>
+              <option>Collision</option>
+              <option>Theft</option>
+              <option>Water damage</option>
+              <option>Fire</option>
+              <option>Medical</option>
+              <option>Trip cancellation</option>
+              <option>Other</option>
+            </select>
+            <p class="field-error" data-error-for="incidentType" data-testid="claim-type-error" hidden></p>
+          </div>
+          <div class="field">
+            <label for="claim-date">Incident date</label>
+            <input id="claim-date" name="incidentDate" type="date" data-testid="claim-date">
+            <p class="field-error" data-error-for="incidentDate" data-testid="claim-date-error" hidden></p>
+          </div>
+          <div class="field">
+            <label for="claim-amount">Claim amount (USD)</label>
+            <input id="claim-amount" name="amount" type="text" inputmode="decimal" data-testid="claim-amount">
+            <p class="field-error" data-error-for="amount" data-testid="claim-amount-error" hidden></p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="claim-description">What happened?</label>
+          <textarea id="claim-description" name="description" rows="4" maxlength="500" data-testid="claim-description"></textarea>
+          <p class="field-hint" data-testid="description-counter">0 / 500</p>
+          <p class="field-error" data-error-for="description" data-testid="claim-description-error" hidden></p>
+        </div>
+        <button type="submit" class="btn btn-primary" data-testid="submit-claim">Submit claim</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Claim history</h2>
+      <table data-testid="claims-table">
+        <thead>
+          <tr><th>Claim ID</th><th>Policy</th><th>Incident type</th><th>Incident date</th><th>Amount</th><th>Status</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="empty-state" data-testid="claims-empty-state" hidden>You haven't filed any claims yet.</div>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+  <script src="js/pages/claims.js"></script>
+</body>
+</html>

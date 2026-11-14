@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | InsureFlow</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app-header"></div>
+  <main class="container">
+    <h1 data-testid="welcome-message"></h1>
+    <p class="subtitle">Here is an overview of your coverage.</p>
+    <section class="cards" aria-label="Account summary">
+      <div class="card"><div class="label">Active policies</div><div class="value" data-testid="active-policies-count">0</div></div>
+      <div class="card"><div class="label">Open claims</div><div class="value" data-testid="open-claims-count">0</div></div>
+      <div class="card"><div class="label">Annual premium (active)</div><div class="value" data-testid="annual-premium-total">$0.00</div></div>
+    </section>
+    <section class="panel">
+      <h2>Your active policies</h2>
+      <ul data-testid="active-policy-list"></ul>
+      <div class="empty-state" data-testid="dashboard-empty-state" hidden>
+        <p>You don't have any policies yet.</p>
+        <a class="btn btn-primary" href="quote.html" data-testid="first-quote-cta">Get your first quote</a>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="quote.html" data-testid="quick-get-quote">Get a quote</a>
+        <a class="btn btn-secondary" href="claims.html" data-testid="quick-file-claim">File a claim</a>
+      </div>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+  <script src="js/pages/dashboard.js"></script>
+</body>
+</html>

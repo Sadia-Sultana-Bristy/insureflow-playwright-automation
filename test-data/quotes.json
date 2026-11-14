@@ -1,0 +1,45 @@
+{
+  "pricingRules": {
+    "description": "Underwriting rules: annual premium = coverage x product rate x tier multiplier, with a minimum premium.",
+    "rates": { "auto": 0.04, "home": 0.006, "travel": 0.02, "health": 0.03 },
+    "tierMultipliers": { "basic": 0.8, "standard": 1, "premium": 1.35 },
+    "minimumPremium": 99
+  },
+  "premiumScenarios": [
+    {
+      "id": "QT-01",
+      "title": "Auto - Standard tier uses base auto rate",
+      "productType": "auto",
+      "tier": "standard",
+      "insuredItem": "2023 Mazda CX-5",
+      "coverage": 24000,
+      "startDateOffsetDays": 0,
+      "expected": { "annualPremium": "$960.00", "monthlyPremium": "$80.00", "status": "Active" }
+    },
+    {
+      "id": "QT-02",
+      "title": "Home - Premium tier applies 1.35x multiplier",
+      "productType": "home",
+      "tier": "premium",
+      "insuredItem": "Townhouse, Ari, Bangkok",
+      "coverage": 450000,
+      "startDateOffsetDays": 14,
+      "expected": { "annualPremium": "$3,645.00", "monthlyPremium": "$303.75", "status": "Pending" }
+    },
+    {
+      "id": "QT-03",
+      "title": "Travel - low coverage falls back to minimum premium",
+      "productType": "travel",
+      "tier": "basic",
+      "insuredItem": "Single trip - Japan",
+      "coverage": 2000,
+      "startDateOffsetDays": 30,
+      "expected": { "annualPremium": "$99.00", "monthlyPremium": "$8.25", "status": "Pending" }
+    }
+  ],
+  "invalidCoverage": [
+    { "value": "abc", "error": "Enter a valid amount" },
+    { "value": "999", "error": "Coverage amount must be between $1,000.00 and $2,000,000.00" },
+    { "value": "2000001", "error": "Coverage amount must be between $1,000.00 and $2,000,000.00" }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "insureflow-playwright-automation",
+  "version": "1.0.0",
+  "description": "Production-style Playwright UI automation framework for an insurance customer portal (POM, fixtures, data-driven tests, CI/CD).",
+  "private": true,
+  "scripts": {
+    "start:app": "node demo-app/server.js",
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:negative": "playwright test --grep \"@negative|@validation\"",
+    "test:e2e": "playwright test --grep @e2e",
+    "test:headed": "playwright test --project=chromium --headed",
+    "test:debug": "playwright test --project=chromium --debug",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report reports/html-report",
+    "clean": "node -e \"const fs=require('fs');['reports/html-report','reports/junit','test-results','.auth'].forEach(p=>fs.rmSync(p,{recursive:true,force:true}))\""
+  },
+  "keywords": ["playwright", "test-automation", "qa", "page-object-model", "e2e", "insurance"],
+  "author": "Md Ashikul Islam",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "dotenv": "^16.4.5"
+  }
+}

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get a Quote | InsureFlow</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app-header"></div>
+  <main class="container">
+    <h1>Get a Quote</h1>
+    <p class="subtitle">Get an instant premium and buy cover online.</p>
+    <section class="panel">
+      <form id="quote-form" novalidate>
+        <p class="stepper" data-testid="quote-step-indicator">Step 1 of 3</p>
+
+        <div data-testid="quote-step-1">
+          <h2>Choose your cover</h2>
+          <fieldset class="field">
+            <legend>Product</legend>
+            <div class="choice-group">
+              <label><input type="radio" name="productType" value="auto"> Auto</label>
+              <label><input type="radio" name="productType" value="home"> Home</label>
+              <label><input type="radio" name="productType" value="travel"> Travel</label>
+              <label><input type="radio" name="productType" value="health"> Health</label>
+            </div>
+            <p class="field-error" data-error-for="productType" data-testid="product-type-error" hidden></p>
+          </fieldset>
+          <fieldset class="field">
+            <legend>Coverage tier</legend>
+            <div class="choice-group">
+              <label><input type="radio" name="tier" value="basic"> Basic</label>
+              <label><input type="radio" name="tier" value="standard"> Standard</label>
+              <label><input type="radio" name="tier" value="premium"> Premium</label>
+            </div>
+            <p class="field-error" data-error-for="tier" data-testid="tier-error" hidden></p>
+          </fieldset>
+          <div class="actions">
+            <button type="button" class="btn btn-primary" data-testid="step-1-next">Continue</button>
+          </div>
+        </div>
+
+        <div data-testid="quote-step-2" hidden>
+          <h2>Tell us about it</h2>
+          <div class="field">
+            <label for="insuredItem">What are you insuring?</label>
+            <input id="insuredItem" name="insuredItem" type="text" placeholder="e.g. 2022 Toyota Camry" data-testid="insured-item-input">
+            <p class="field-error" data-error-for="insuredItem" data-testid="insured-item-error" hidden></p>
+          </div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="coverage">Coverage amount (USD)</label>
+              <input id="coverage" name="coverage" type="text" inputmode="decimal" data-testid="coverage-input">
+              <p class="field-hint">Between $1,000 and $2,000,000</p>
+              <p class="field-error" data-error-for="coverage" data-testid="coverage-error" hidden></p>
+            </div>
+            <div class="field">
+              <label for="startDate">Cover start date</label>
+              <input id="startDate" name="startDate" type="date" data-testid="start-date-input">
+              <p class="field-hint">Today or within the next 90 days</p>
+              <p class="field-error" data-error-for="startDate" data-testid="start-date-error" hidden></p>
+            </div>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-secondary" data-testid="step-2-back">Back</button>
+            <button type="button" class="btn btn-primary" data-testid="step-2-next">Calculate premium</button>
+          </div>
+        </div>
+
+        <div data-testid="quote-step-3" hidden>
+          <h2>Review your quote</h2>
+          <dl class="details">
+            <dt>Product</dt><dd data-testid="review-product"></dd>
+            <dt>Coverage tier</dt><dd data-testid="review-tier"></dd>
+            <dt>Insured item</dt><dd data-testid="review-insured-item"></dd>
+            <dt>Coverage amount</dt><dd data-testid="review-coverage"></dd>
+            <dt>Start date</dt><dd data-testid="review-start-date"></dd>
+          </dl>
+          <div class="premium-box">
+            <div>Annual premium</div>
+            <div class="amount" data-testid="quote-annual-premium"></div>
+            <div>or <strong data-testid="quote-monthly-premium"></strong> per month</div>
+          </div>
+          <div class="field">
+            <label><input type="checkbox" name="acceptTerms" data-testid="accept-terms"> I have read and accept the policy terms and conditions</label>
+            <p class="field-error" data-error-for="acceptTerms" data-testid="terms-error" hidden></p>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn btn-secondary" data-testid="step-3-back">Back</button>
+            <button type="submit" class="btn btn-primary" data-testid="purchase-button">Purchase policy</button>
+          </div>
+        </div>
+      </form>
+
+      <div data-testid="quote-confirmation" hidden>
+        <div class="alert alert-success" role="status">
+          Your policy <strong data-testid="confirmation-policy-number"></strong> has been issued.
+          Status: <strong data-testid="confirmation-status"></strong>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" data-testid="view-policy-link">View policy</a>
+          <a class="btn btn-secondary" href="policies.html" data-testid="go-to-policies">Go to My Policies</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+  <script src="js/pages/quote.js"></script>
+</body>
+</html>

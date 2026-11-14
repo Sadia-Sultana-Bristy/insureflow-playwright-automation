@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Policies | InsureFlow</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app-header"></div>
+  <main class="container">
+    <h1>My Policies</h1>
+    <p class="subtitle">Search, filter and review all of your policies.</p>
+    <section class="panel">
+      <div class="toolbar">
+        <div class="field">
+          <label for="search">Search</label>
+          <input id="search" type="search" placeholder="Policy number or insured item" data-testid="policy-search">
+        </div>
+        <div class="field">
+          <label for="filter-type">Product</label>
+          <select id="filter-type" data-testid="filter-type">
+            <option value="">All products</option>
+            <option value="auto">Auto</option>
+            <option value="home">Home</option>
+            <option value="travel">Travel</option>
+            <option value="health">Health</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="filter-status">Status</label>
+          <select id="filter-status" data-testid="filter-status">
+            <option value="">All statuses</option>
+            <option value="Active">Active</option>
+            <option value="Pending">Pending</option>
+            <option value="Expired">Expired</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="sort-by">Sort by</label>
+          <select id="sort-by" data-testid="sort-by">
+            <option value="">Policy number</option>
+            <option value="premium-asc">Premium: low to high</option>
+            <option value="premium-desc">Premium: high to low</option>
+            <option value="renewal-asc">Renewal date: soonest</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-secondary" data-testid="clear-filters">Clear filters</button>
+      </div>
+      <p data-testid="results-count" role="status"></p>
+      <table data-testid="policies-table">
+        <thead>
+          <tr><th>Policy number</th><th>Product</th><th>Insured item</th><th>Status</th><th>Annual premium</th><th>Renewal date</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="empty-state" data-testid="policies-empty-state" hidden>No policies match your search or filters.</div>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+  <script src="js/pages/policies.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "validClaim": {
+    "policyNumber": "IF-AUT-100245",
+    "incidentType": "Theft",
+    "amount": 1250,
+    "description": "Side mirror and dashcam were stolen while the car was parked overnight on the street."
+  },
+  "invalidAmounts": [
+    { "value": "0", "errorKey": "amountZero" },
+    { "value": "24000.01", "errorKey": "amountExceedsCoverage" }
+  ]
+}
