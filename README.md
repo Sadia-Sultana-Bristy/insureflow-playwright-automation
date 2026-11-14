@@ -10,10 +10,19 @@ This is a UI test automation framework for **InsureFlow**, an insurance customer
 
 The suite covers real business workflows, not isolated pages. A customer gets a quote, buys a policy, finds it in their portfolio and files a claim against it. The suite then checks that the account totals update.
 
+## Test run demo
+
+![Recorded Playwright test run: login, policy search, quote validation and the end-to-end policy lifecycle](docs/insureflow-test-run-demo.gif)
+
+*Four real tests from this suite running in Chromium, slowed down so each step is visible: login, policy search and filters, quote validation, and the full quote → buy → claim journey.*
+
+**Latest results:** every push runs all 25 tests on Chromium and Firefox. See the [GitHub Actions runs](https://github.com/Sadia-Sultana-Bristy/insureflow-playwright-automation/actions/workflows/playwright.yml), open any green run, and download the HTML test report from **Artifacts**.
+
 ---
 
 ## Table of contents
 
+- [Test run demo](#test-run-demo)
 - [Business scenario](#business-scenario)
 - [Features tested](#features-tested)
 - [Tech stack](#tech-stack)
