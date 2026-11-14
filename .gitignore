@@ -1,0 +1,17 @@
+node_modules/
+.env
+
+# Playwright artifacts
+/test-results/
+/playwright/.cache/
+/blob-report/
+/.auth/
+
+# Generated reports & evidence (folders are kept via .gitkeep)
+/reports/*
+!/reports/.gitkeep
+/screenshots/*
+!/screenshots/.gitkeep
+
+.DS_Store
+*.log
